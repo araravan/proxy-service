@@ -1,0 +1,10 @@
+services:
+  proxy-service:
+    image: my-proxy-service
+    container_name: proxy-service
+    build:
+      context: .
+      dockerfile: ./src/main/docker/Dockerfile.jvm
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
